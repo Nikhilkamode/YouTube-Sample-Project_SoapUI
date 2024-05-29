@@ -1,0 +1,7 @@
+The YouTube REST API contains a root “feeds” resource with child resources for videos channels and standard feeds. The “standard” child resource contains children for the top_rated, most_popular and most_viewed feeds. Each resource contains one GET method with one Request which you can use for ad-hoc testing.
+The TestCase used for monitoring basically makes one request to each of the resources defined above and validates the response.
+Channel Search: searches for channels named "smartbear" - JSON Response - validates that there is at least one hit Save
+Video Search: searches for videos named "unprepared geeks" - ATOM XML Response - validates that there is at least one hit
+Top Rated: validates that the top-rated RSS listing contains the correct youtube image
+Most Popular : validates that the Most Popular response in JSONC format contains the expected access-control permissions
+Most Viewed : validates that the Most Viewed response in JSON-in-Script format starts with the expected script call
